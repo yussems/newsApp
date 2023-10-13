@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "885893087442",
+    "project_id": "rate-me-610ea",
+    "storage_bucket": "rate-me-610ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885893087442:android:1c2dcf05e814210825ad0b",
+        "android_client_info": {
+          "package_name": "com.hitateknews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885893087442-gicqabgo80qnbq9rdvp1c8dqve7i8pe1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKiv6yzuXOj-7M3rGjNGmAoXLPBlC-0dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885893087442-gicqabgo80qnbq9rdvp1c8dqve7i8pe1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
