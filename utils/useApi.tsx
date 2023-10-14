@@ -3,7 +3,7 @@ import axios from 'axios';
 const URL = process.env.NEWS_URL;
 const TOKEN = process.env.API_TOKEN;
 
-export const useApi = () => {
+export const useApi = (param: string) => {
   const [data, setdata] = useState(null);
   const [error, seterror] = useState(null);
   const [loading, setloading] = useState(false);
@@ -16,8 +16,8 @@ export const useApi = () => {
       params: {
         country: 'us',
         language: 'en',
-        pageSize: '10',
-        category: 'sports',
+        pageSize: '5',
+        category: param,
       },
       headers: {
         'X-RapidAPI-Key': TOKEN,
@@ -26,7 +26,6 @@ export const useApi = () => {
     };
     try {
       const response = await axios.request(options);
-      console.log(response.data);
 
       setdata(response.data);
     } catch (error) {

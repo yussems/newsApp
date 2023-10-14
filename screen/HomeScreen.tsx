@@ -1,21 +1,15 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
-import {useApi} from '../utils/useApi';
+import {ScrollView} from 'react-native';
+import Layout from '../component/Layout';
+import Business from '../component/Business';
 
 function HomeScreen() {
-  const {loading, data, error} = useApi();
-  console.log(JSON.stringify(data, null, 2));
-  console.log(loading, error);
-
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Text>{JSON.stringify(data, null, 2)}</Text>
-    </View>
+    <ScrollView>
+      <Layout>
+        <Business />
+      </Layout>
+    </ScrollView>
   );
 }
 export default HomeScreen;
