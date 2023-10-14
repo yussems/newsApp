@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: '#ffffff',
+    height: '100%',
   },
   content: {
     width: myDimensions.deviceWidth * 0.96,
