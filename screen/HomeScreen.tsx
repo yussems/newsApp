@@ -1,7 +1,12 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
+import {useApi} from '../utils/useApi';
 
 function HomeScreen() {
+  const {loading, data, error} = useApi();
+  console.log(JSON.stringify(data, null, 2));
+  console.log(loading, error);
+
   return (
     <View
       style={{
@@ -9,7 +14,7 @@ function HomeScreen() {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Text>Home Screenaasdasdsdasd</Text>
+      <Text>{JSON.stringify(data, null, 2)}</Text>
     </View>
   );
 }
