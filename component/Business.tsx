@@ -5,16 +5,17 @@ import Loading from './Loading';
 import MyError from './MyError';
 import CustomText from './CustomText';
 import Line from './Line';
+import {useAuthContext} from '../context/authContext';
 
 const Business = () => {
   const {data, loading, error} = useApi('business');
-
+  const {user} = useAuthContext();
   return (
     <View>
       {loading && <Loading />}
       {error && <MyError />}
       <View>
-        <View>
+        <View style={{position: 'relative'}}>
           <CustomText
             h2
             bold
@@ -22,6 +23,16 @@ const Business = () => {
             color={'#005D99'}
             style={{marginVertical: 16}}
           />
+          <View
+            style={{
+              position: 'absolute',
+              top: 5,
+              right: 5,
+              width: 20,
+              height: 20,
+              backgroundColor: user ? 'green' : 'red',
+              borderRadius: 20,
+            }}></View>
         </View>
         <View>
           <Image
@@ -32,13 +43,13 @@ const Business = () => {
         {data?.articles?.map((item, i) => {
           const {title, url, published_date, publisher} = item;
           return (
-            <View key={i} >
-              <View style={{gap: 8, marginVertical: 16}}>
+            <View key={i}>
+              <View style={{gap: 8}}>
                 <View>
                   <CustomText h2 bold title={title} color={'black'} />
                 </View>
                 <View>
-                  <CustomText h5 title={url} color={'black'}  />
+                  <CustomText h5 title={url} color={'black'} />
                 </View>
                 <View
                   style={{
@@ -58,10 +69,12 @@ const Business = () => {
                       }}
                     />
                   </View>
-                  <CustomText p title={publisher?.name} bold color={'black'}  />
+                  <CustomText p title={publisher?.name} bold color={'black'} />
                 </View>
               </View>
-              <Line />
+              <View style={{marginVertical: 24}}>
+                <Line />
+              </View>
             </View>
           );
         })}
@@ -72,8 +85,4 @@ const Business = () => {
 
 export default Business;
 
-const styles = StyleSheet.create({
-  c: {
-    color: '#005D99',
-  },
-});
+const styles = StyleSheet.create({});

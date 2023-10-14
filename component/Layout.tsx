@@ -15,8 +15,9 @@ export default Layout;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    backgroundColor: '#ffffff',
   },
   content: {
-    width: myDimensions.deviceWidth * 0.95,
+    width: myDimensions.deviceWidth * 0.96,
   },
 });
