@@ -4,7 +4,7 @@ import React from 'react';
 const MyError = () => {
   return (
     <View>
-      <Text>MyError</Text>
+      <Text>404 not Found. please check your internet</Text>
     </View>
   );
 };
