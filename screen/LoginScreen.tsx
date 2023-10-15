@@ -19,11 +19,17 @@ const LoginScreen = () => {
 
     const user_signIn = auth().signInWithCredential(googleCredential);
 
-    user_signIn.then(() => {
-      Alert.alert('Authentication Successful', 'Have Nice Reading', [
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
-      ]);
-    });
+    user_signIn
+      .then(() => {
+        Alert.alert('Authentication Successful', 'Have Nice Reading', [
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ]);
+      })
+      .catch(() => {
+        Alert.alert('Authentication Failed', 'Something is wrong', [
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ]);
+      });
   }
 
   return (

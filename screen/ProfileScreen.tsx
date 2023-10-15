@@ -16,7 +16,7 @@ const ProfileScreen = ({navigation }) => {
         console.log('take a photo');
       },
     );
-    setimgData(result?.assets[0].fileName);
+    setimgData(result?.assets[0].originalPath);
     console.log(result, '-----------------');
   };
   console.log(imgData);
