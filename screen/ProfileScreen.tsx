@@ -5,7 +5,7 @@ import {useAuthContext} from '../context/authContext';
 import Layout from '../component/Layout';
 
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation }) => {
   const [imgData, setimgData] = useState('');
   const {user} = useAuthContext();
 
@@ -21,6 +21,24 @@ const ProfileScreen = () => {
   };
   console.log(imgData);
 
+  if (!user) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <CustomText h2 color={'grey'} title={'Please Login'} />
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#005D99',
+            width: '50%',
+            alignItems: 'center',
+            padding: 10,
+            borderRadius: 20,
+          }}
+          onPress={() => navigation.navigate('Login')}>
+          <CustomText h4 title={'Login Screen'} color={'white'} />
+        </TouchableOpacity>
+      </View>
+    );
+  }
   return (
     <Layout>
       <View style={{marginVertical: 20, gap: 8}}>

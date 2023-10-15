@@ -11,11 +11,16 @@ import {
 import HomeScreen from './screen/HomeScreen';
 import ProfileScreen from './screen/ProfileScreen';
 import LoginScreen from './screen/LoginScreen';
-import {Image, View, Text} from 'react-native';
+import {Image} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import AuthContext, {useAuthContext} from './context/authContext';
 const Drawer = createDrawerNavigator();
 
 function App() {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <AuthContext>
       <NavigationContainer>
