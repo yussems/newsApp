@@ -10,7 +10,6 @@ const AuthContext = ({children}) => {
     setUser(user);
     if (initializing) setInitializing(false);
   }
-  console.log(user);
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
